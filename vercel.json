@@ -6,8 +6,8 @@
       }
     },
     "env": {
-      "CLOUDINARY_CLOUD_NAME": "@cloudinary-cloud-name",
-      "CLOUDINARY_API_KEY": "@cloudinary-api-key", 
-      "CLOUDINARY_API_SECRET": "@cloudinary-api-secret"
+      "CLOUDINARY_CLOUD_NAME": "dshmp0hgm",
+      "CLOUDINARY_API_KEY": "272684499144954",
+      "CLOUDINARY_API_SECRET": "joqmYp5iDsmGCML2ul7KYpnMKpI"
     }
   }
