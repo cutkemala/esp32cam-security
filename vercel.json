@@ -1,0 +1,13 @@
+{
+    "version": 2,
+    "functions": {
+      "api/*.js": {
+        "runtime": "@vercel/node"
+      }
+    },
+    "env": {
+      "CLOUDINARY_CLOUD_NAME": "@cloudinary-cloud-name",
+      "CLOUDINARY_API_KEY": "@cloudinary-api-key", 
+      "CLOUDINARY_API_SECRET": "@cloudinary-api-secret"
+    }
+  }
