@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload ESPCam to Cloudinary</title>
+</head>
+<body>
+  <h2>Upload Gambar</h2>
+  <input type="file" id="fileInput">
+  <button onclick="uploadImage()">Upload</button>
+
+  <script>
+    async function uploadImage() {
+      const fileInput = document.getElementById('fileInput');
+      const file = fileInput.files[0];
+
+      if (!file) {
+        alert('Pilih gambar terlebih dahulu');
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onloadend = async () => {
+        const base64 = reader.result;
+
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ image: base64 }),
+        });
+
+        const data = await res.json();
+        console.log(data);
+
+        if (data.url) {
+          alert('Upload berhasil: ' + data.url);
+        } else {
+          alert('Gagal: ' + data.message);
+        }
+      };
+
+      reader.readAsDataURL(file);
+    }
+  </script>
+</body>
+</html>
